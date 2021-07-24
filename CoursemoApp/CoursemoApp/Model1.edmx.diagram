@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62fea94a804f45d180b3fa07f4e3ded7" Name="Diagram1">
+        <EntityTypeShape EntityType="CoursemoModel.COURSE" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursemoModel.REGISTRATION" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursemoModel.STUDENT" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursemoModel.WAITLIST" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CoursemoModel.FK__REGISTRATIO__CRN__5C8CB268" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursemoModel.FK__WAITLIST__CRN__605D434C" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursemoModel.FK__REGISTRAT__NetID__5B988E2F" ManuallyRouted="false" />
+        <AssociationConnector Association="CoursemoModel.FK__WAITLIST__NetID__5F691F13" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

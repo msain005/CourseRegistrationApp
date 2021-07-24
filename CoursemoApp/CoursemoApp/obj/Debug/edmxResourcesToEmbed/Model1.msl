@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoursemoModelStoreContainer" CdmEntityContainer="CoursemoEntities">
+    <EntitySetMapping Name="COURSEs">
+      <EntityTypeMapping TypeName="CoursemoModel.COURSE">
+        <MappingFragment StoreEntitySet="COURSE">
+          <ScalarProperty Name="CRN" ColumnName="CRN" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="CourseNumber" ColumnName="CourseNumber" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ClassSize" ColumnName="ClassSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISTRATIONs">
+      <EntityTypeMapping TypeName="CoursemoModel.REGISTRATION">
+        <MappingFragment StoreEntitySet="REGISTRATION">
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="NetID" ColumnName="NetID" />
+          <ScalarProperty Name="CRN" ColumnName="CRN" />
+          <ScalarProperty Name="Registered" ColumnName="Registered" />
+          <ScalarProperty Name="WaitList" ColumnName="WaitList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENTs">
+      <EntityTypeMapping TypeName="CoursemoModel.STUDENT">
+        <MappingFragment StoreEntitySet="STUDENT">
+          <ScalarProperty Name="NetID" ColumnName="NetID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WAITLISTs">
+      <EntityTypeMapping TypeName="CoursemoModel.WAITLIST">
+        <MappingFragment StoreEntitySet="WAITLIST">
+          <ScalarProperty Name="WID" ColumnName="WID" />
+          <ScalarProperty Name="NetID" ColumnName="NetID" />
+          <ScalarProperty Name="CRN" ColumnName="CRN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

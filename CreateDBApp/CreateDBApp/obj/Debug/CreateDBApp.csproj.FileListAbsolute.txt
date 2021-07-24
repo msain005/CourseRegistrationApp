@@ -1,0 +1,14 @@
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.exe.config
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.exe
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.pdb
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.csprojResolveAssemblyReference.cache
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.csproj.CoreCompileInputs.cache
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.exe
+C:\Users\Misbah\Desktop\skool stuff\cs480\proj3\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.pdb
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.exe.config
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.exe
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\bin\Debug\CreateDBApp.pdb
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.csproj.CoreCompileInputs.cache
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.exe
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.pdb
+C:\Users\Misbah\Desktop\skool stuff\cs480\P4Both\CreateDBApp\CreateDBApp\obj\Debug\CreateDBApp.csprojAssemblyReference.cache

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoursemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="COURSE">
+    <Key>
+      <PropertyRef Name="CRN" />
+    </Key>
+    <Property Name="CRN" Type="Int32" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CourseNumber" Type="Int16" Nullable="false" />
+    <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Year" Type="Int16" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassSize" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="REGISTRATIONs" Relationship="Self.FK__REGISTRATIO__CRN__5C8CB268" FromRole="COURSE" ToRole="REGISTRATION" />
+    <NavigationProperty Name="WAITLISTs" Relationship="Self.FK__WAITLIST__CRN__605D434C" FromRole="COURSE" ToRole="WAITLIST" />
+  </EntityType>
+  <EntityType Name="REGISTRATION">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NetID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CRN" Type="Int32" Nullable="false" />
+    <Property Name="Registered" Type="Boolean" Nullable="false" />
+    <Property Name="WaitList" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="COURSE" Relationship="Self.FK__REGISTRATIO__CRN__5C8CB268" FromRole="REGISTRATION" ToRole="COURSE" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__REGISTRAT__NetID__5B988E2F" FromRole="REGISTRATION" ToRole="STUDENT" />
+  </EntityType>
+  <EntityType Name="STUDENT">
+    <Key>
+      <PropertyRef Name="NetID" />
+    </Key>
+    <Property Name="NetID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="REGISTRATIONs" Relationship="Self.FK__REGISTRAT__NetID__5B988E2F" FromRole="STUDENT" ToRole="REGISTRATION" />
+    <NavigationProperty Name="WAITLISTs" Relationship="Self.FK__WAITLIST__NetID__5F691F13" FromRole="STUDENT" ToRole="WAITLIST" />
+  </EntityType>
+  <EntityType Name="WAITLIST">
+    <Key>
+      <PropertyRef Name="WID" />
+    </Key>
+    <Property Name="WID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NetID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CRN" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="COURSE" Relationship="Self.FK__WAITLIST__CRN__605D434C" FromRole="WAITLIST" ToRole="COURSE" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__WAITLIST__NetID__5F691F13" FromRole="WAITLIST" ToRole="STUDENT" />
+  </EntityType>
+  <Association Name="FK__REGISTRATIO__CRN__5C8CB268">
+    <End Role="COURSE" Type="Self.COURSE" Multiplicity="1" />
+    <End Role="REGISTRATION" Type="Self.REGISTRATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COURSE">
+        <PropertyRef Name="CRN" />
+      </Principal>
+      <Dependent Role="REGISTRATION">
+        <PropertyRef Name="CRN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WAITLIST__CRN__605D434C">
+    <End Role="COURSE" Type="Self.COURSE" Multiplicity="1" />
+    <End Role="WAITLIST" Type="Self.WAITLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COURSE">
+        <PropertyRef Name="CRN" />
+      </Principal>
+      <Dependent Role="WAITLIST">
+        <PropertyRef Name="CRN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__REGISTRAT__NetID__5B988E2F">
+    <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+    <End Role="REGISTRATION" Type="Self.REGISTRATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENT">
+        <PropertyRef Name="NetID" />
+      </Principal>
+      <Dependent Role="REGISTRATION">
+        <PropertyRef Name="NetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WAITLIST__NetID__5F691F13">
+    <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="1" />
+    <End Role="WAITLIST" Type="Self.WAITLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENT">
+        <PropertyRef Name="NetID" />
+      </Principal>
+      <Dependent Role="WAITLIST">
+        <PropertyRef Name="NetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoursemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COURSEs" EntityType="Self.COURSE" />
+    <EntitySet Name="REGISTRATIONs" EntityType="Self.REGISTRATION" />
+    <EntitySet Name="STUDENTs" EntityType="Self.STUDENT" />
+    <EntitySet Name="WAITLISTs" EntityType="Self.WAITLIST" />
+    <AssociationSet Name="FK__REGISTRATIO__CRN__5C8CB268" Association="Self.FK__REGISTRATIO__CRN__5C8CB268">
+      <End Role="COURSE" EntitySet="COURSEs" />
+      <End Role="REGISTRATION" EntitySet="REGISTRATIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WAITLIST__CRN__605D434C" Association="Self.FK__WAITLIST__CRN__605D434C">
+      <End Role="COURSE" EntitySet="COURSEs" />
+      <End Role="WAITLIST" EntitySet="WAITLISTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__REGISTRAT__NetID__5B988E2F" Association="Self.FK__REGISTRAT__NetID__5B988E2F">
+      <End Role="STUDENT" EntitySet="STUDENTs" />
+      <End Role="REGISTRATION" EntitySet="REGISTRATIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WAITLIST__NetID__5F691F13" Association="Self.FK__WAITLIST__NetID__5F691F13">
+      <End Role="STUDENT" EntitySet="STUDENTs" />
+      <End Role="WAITLIST" EntitySet="WAITLISTs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
